@@ -1,0 +1,15 @@
+# Personal keymap backups
+backups/
+
+# Local tool settings
+.claude/
+
+# Dependencies and logs
+node_modules/
+*.log
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,19 @@
+{
+  "name": "plainkey",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A minimal web configurator for VIA-compatible keyboards",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ukarpoh/Plainkey.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node serve.mjs",
+    "test": "node --test"
+  }
+}

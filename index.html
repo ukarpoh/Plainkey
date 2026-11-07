@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Plainkey</title>
+  <meta name="description" content="A minimal web configurator for VIA-compatible keyboards.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="wordmark" href="./" aria-label="Plainkey">
+        <span>Plainkey</span><span class="wordmark-sub" id="def-name"></span>
+      </a>
+      <nav class="nav-tabs" role="tablist" aria-label="Sections">
+        <button role="tab" data-tab="keymap" aria-selected="true">Keymap</button>
+        <button role="tab" data-tab="lighting" aria-selected="false">Lighting</button>
+        <button role="tab" data-tab="tester" aria-selected="false">Tester</button>
+        <button role="tab" data-tab="backup" aria-selected="false">Backup</button>
+      </nav>
+      <div class="nav-end">
+        <span id="status" class="status" role="status"><span class="dot" aria-hidden="true"></span><span class="status-text">Not connected</span></span>
+        <button id="connect" class="btn btn-primary btn-small" disabled>Connect</button>
+      </div>
+    </div>
+    <div id="busy" class="progress" hidden><span></span></div>
+  </header>
+
+  <main>
+    <section data-panel="keymap"></section>
+    <section data-panel="lighting" hidden></section>
+    <section data-panel="tester" hidden></section>
+    <section data-panel="backup" hidden></section>
+  </main>
+
+  <footer class="footer">
+    <span>Speaks the open VIA protocol. Your keymap is stored on the keyboard, not here.</span>
+    <span class="footer-end">
+      <span class="segmented small" id="theme" role="group" aria-label="Appearance">
+        <button data-theme-choice="light">Light</button>
+        <button data-theme-choice="auto">Auto</button>
+        <button data-theme-choice="dark">Dark</button>
+      </span>
+      <label class="link">Use another definition<input id="def-file" type="file" accept=".json,application/json" hidden></label>
+    </span>
+  </footer>
+
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
